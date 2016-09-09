@@ -1,12 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import SearchGitHub from './SearchGitHub';
 
 class Main extends React.Component {
   render(){
     return(
-      <div>Hello World!</div>
+      <div className="main-container">
+        <nav className="navbar nvbar-default" role="navigation">
+          <div className="col-sm-7 col-sm-offset-2" style={{marginTop: 15}}>
+            <SearchGitHub history={this.props.history} />
+          </div>
+        </nav>
+          <div className="container">
+            {this.props.children}
+          </div>
+      </div>
     )
   }
 }
 
-ReactDOM.render(<Main />, document.getElementById('app'))
+export default Main
